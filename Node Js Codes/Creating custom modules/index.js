@@ -1,0 +1,5 @@
+const mod = require('./mod.js')
+console.log(mod.Sum(34,56))
+console.log(mod.Product(34,100))
+console.log(`The name of the coder is ${mod.Name}...`)
+console.log("This is Index.js")
