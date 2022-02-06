@@ -7,6 +7,7 @@ app.use(express.json())
 app.use("/static",express.static("static"))//Access static files
 app.set('view engine', 'pug')//Set template engine
 app.set('views','views')//Set views directory
+app.use(express.urlencoded())//Middle helps to get values in backend to express
 
 
 //ENDPOINTS
@@ -18,6 +19,9 @@ app.get("/", (req, res) => {
   res.status(200).render('index',values);
 });
 app.get('/contact',(req,res)=>{
+  res.render('contact')
+})
+app.post('/contact',(req,res)=>{
   res.render('contact')
 })
 app.listen(port, () => {
