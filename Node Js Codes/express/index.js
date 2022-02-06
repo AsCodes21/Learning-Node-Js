@@ -3,6 +3,8 @@ const app = express();
 const port = 3000;
 
 app.use(express.json())
+//Access static files
+app.use("/static",express.static("static"))
 
 app.get("/", (req, res) => {
   res.send("Hi there I am Anmol Sinha!!-Home");
