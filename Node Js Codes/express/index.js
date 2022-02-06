@@ -17,6 +17,9 @@ app.get("/", (req, res) => {
     values = {'title':'Jai pubg'}
   res.status(200).render('index',values);
 });
+app.get('/contact',(req,res)=>{
+  res.render('contact')
+})
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
