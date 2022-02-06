@@ -1,4 +1,5 @@
 const express = require("express");
+const fs = require("fs");
 const app = express();
 const port = 3000;
 
@@ -22,7 +23,13 @@ app.get('/contact',(req,res)=>{
   res.render('contact')
 })
 app.post('/contact',(req,res)=>{
-  res.render('contact')
+  res.render('contact');
+  form_name = req.body.name
+  email = req.body.email
+  password = req.body.password
+  console.log(req.body)
+  let data = `[name:${form_name},email:${email},password:${password}]`
+  fs.writeFileSync("database.txt",data)
 })
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
